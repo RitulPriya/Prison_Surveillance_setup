@@ -1,0 +1,837 @@
+/*             ADMINISTRATION LOGIN 
+username = user
+ password = admin123
+               POLICE LOGIN
+ username= police
+ pass: admin123
+               JAILOR LOGIN
+ username: jailor
+ Pass: admin123
+*/
+#include <iostream>
+#include <conio.h>
+#include <string.h>
+#include <windows.h>
+#include <ctime>
+using namespace std;
+
+void FrontPage(); 
+void Date();      
+void Time();      
+
+class Prison
+{
+	private:
+	char First_Name[20];
+    char Second_Name[20];
+    char Gender[20];
+    int CellNo[20];
+    int Age[20];
+    double Height[20];
+    char Eyecolor[20];
+    char Crime[20];
+    int Punishmentmonths[20];
+    
+public:
+    void SetData();      // Set data of the prisoners
+    void Details();      // Getting details of the prisoners
+    void Afterlogin_Ad();   // After login page OR Menu function for adminstration
+    void Afterlogin_Po();// After login page OR Menu function for Police
+    void Afterlogin_Pr();// After login page OR Menu function for Prisoner
+    void Attendance();   // Storing attendace of the prisoners
+    void Release();      // Release the prisoners
+    void SearchPrison(); // Search Prison
+    void PrisonFile();   // Prison File
+    void Logout();       // Logout
+    void Exit();         // Exit function
+    void Ad_Login();        //Adminstration login
+    void Po_Login();// Police Login
+    void Pr_Login();// Prisoner Login
+};
+
+void Prison::Logout()
+{
+    system("cls");
+    cout << "\n\n\n\n\n\n\t\t\t\t\t";
+    cout << "logging out ";
+}
+void Prison::Pr_Login()
+{
+
+    char Username[15];
+    char Password[15];
+    char Epwd;
+    int true1 = 1;
+    int try1 = 0;
+    int i = 0;
+
+    do
+    {
+        system("cls");
+        Time();
+        cout << "\n\n\n\n\n\n";
+        int a;
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t    ----------------------------------------\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t    |   PRISON SURVEILLANCE SETUP   |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t    ----------------------------------------\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\n\n";
+        cout << "\t\t\t\t\t";
+        cout << "Prisoner Login : ";
+        cin >> Username;
+        cout << "\t\t\t\t\t";
+        cout << "\n";
+        cout << "\t\t\t\t\t";
+        cout << "Password : ";
+        for (i = 0;;)
+        {
+            Epwd = getch();
+            if ((Epwd >= 'a' && Epwd <= 'z') || (Epwd >= 'A' && Epwd <= 'Z') || (Epwd >= '0' && Epwd <= '9'))
+            {
+                Password[i] = Epwd;
+                ++i;
+                cout << "*";
+            }
+            if (Epwd == '\b' && i >= 1)
+            {
+                cout << "\b \b";
+                --i;
+            }
+            if (Epwd == '\r')
+            {
+                Password[i] = '\0';
+                break;
+            }
+        }
+
+        if (strcmp(Username, "jailor") == 0 && strcmp(Password, "admin 123") == 0)
+        {
+            cout << "\n\n";
+            cout << "\t\t\t\t";
+            cout << "You are accessed to the system!\n\n";
+            cout << "\t\t\t\t";
+            system("pause");
+            system("cls");
+            true1 = 0;
+            try1 = 4;
+            Prison::Afterlogin_Pr();
+        }
+        else
+        {
+            system("cls");
+            try1 = try1 + 1;
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            cout << "\t\t\t\t\t";
+            cout << "No. of attempts remain: " << 3 - try1;
+            cout << "\n\n";
+            cout << "\t\t\t\t";
+            system("pause");
+
+            if (try1 >= 3)
+            {
+                cout << "\t\t\t\t\t\t";
+                cout << "\n";
+                cout << "\t\t\t\t";
+                cout << "No permission to enter the system!\n\n";
+                cout << "\t\t\t\t";
+                system("pause");
+                exit;
+            }
+        }
+    } while (try1 < 3);
+}
+void Prison::Po_Login()
+{
+
+    char Username[15];
+    char Password[15];
+    char Epwd;
+    int true1 = 1;
+    int try1 = 0;
+    int i = 0;
+
+    do
+    {
+        system("cls");
+        Time();
+        cout << "\n\n\n\n\n\n";
+        int a;
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t    ----------------------------------------\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t    |   PRISON SURVEILLANCE SETUP   |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t    ----------------------------------------\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\n\n";
+        cout << "\t\t\t\t\t";
+        cout << "Police Login : ";
+        cin >> Username;
+        cout << "\t\t\t\t\t";
+        cout << "\n";
+        cout << "\t\t\t\t\t";
+        cout << "Password : ";
+        for (i = 0;;)
+        {
+            Epwd = getch();
+            if ((Epwd >= 'a' && Epwd <= 'z') || (Epwd >= 'A' && Epwd <= 'Z') || (Epwd >= '0' && Epwd <= '9'))
+            {
+                Password[i] = Epwd;
+                ++i;
+                cout << "*";
+            }
+            if (Epwd == '\b' && i >= 1)
+            {
+                cout << "\b \b";
+                --i;
+            }
+            if (Epwd == '\r')
+            {
+                Password[i] = '\0';
+                break;
+            }
+        }
+
+        if (strcmp(Username, "police") == 0 && strcmp(Password, "admin123") == 0)
+        {
+            cout << "\n\n";
+            cout << "\t\t\t\t";
+            cout << "You are accessed to the system!\n\n";
+            cout << "\t\t\t\t";
+            system("pause");
+            system("cls");
+            true1 = 0;
+            try1 = 4;
+            Prison::Afterlogin_Po();
+        }
+        else
+        {
+            system("cls");
+            try1 = try1 + 1;
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            cout << "\t\t\t\t\t";
+            cout << "No. of attempts remain: " << 3 - try1;
+            cout << "\n\n";
+            cout << "\t\t\t\t";
+            system("pause");
+
+            if (try1 >= 3)
+            {
+                cout << "\t\t\t\t\t\t";
+                cout << "\n";
+                cout << "\t\t\t\t";
+                cout << "No permission to enter the system!\n\n";
+                cout << "\t\t\t\t";
+                system("pause");
+                exit;
+            }
+        }
+    } while (try1 < 3);
+}
+void Prison::Ad_Login()
+{
+
+    char Username[15];
+    char Password[15];
+    char Epwd;
+    int true1 = 1;
+    int try1 = 0;
+    int i = 0;
+
+    do
+    {
+        system("cls");
+        Time();
+        cout << "\n\n\n\n\n\n";
+        int a;
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t    ----------------------------------------\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t    |   PRISON SURVEILLANCE SETUP   |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t    ----------------------------------------\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\n\n";
+        cout << "\t\t\t\t\t";
+        cout << "Adminstration Login : ";
+        cin >> Username;
+        cout << "\t\t\t\t\t";
+        cout << "\n";
+        cout << "\t\t\t\t\t";
+        cout << "Password : ";
+        for (i = 0;;)
+        {
+            Epwd = getch();
+            if ((Epwd >= 'a' && Epwd <= 'z') || (Epwd >= 'A' && Epwd <= 'Z') || (Epwd >= '0' && Epwd <= '9'))
+            {
+                Password[i] = Epwd;
+                ++i;
+                cout << "*";
+            }
+            if (Epwd == '\b' && i >= 1)
+            {
+                cout << "\b \b";
+                --i;
+            }
+            if (Epwd == '\r')
+            {
+                Password[i] = '\0';
+                break;
+            }
+        }
+
+        if (strcmp(Username, "user") == 0 && strcmp(Password, "admin123") == 0)
+        {
+            cout << "\n\n";
+            cout << "\t\t\t\t";
+            cout << "You are accessed to the system!\n\n";
+            cout << "\t\t\t\t";
+            system("pause");
+            system("cls");
+            true1 = 0;
+            try1 = 4;
+            Prison::Afterlogin_Ad();
+        }
+        else
+        {
+            system("cls");
+            try1 = try1 + 1;
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            cout << "\t\t\t\t\t";
+            cout << "No. of attempts remain: " << 3 - try1;
+            cout << "\n\n";
+            cout << "\t\t\t\t";
+            system("pause");
+
+            if (try1 >= 3)
+            {
+                cout << "\t\t\t\t\t\t";
+                cout << "\n";
+                cout << "\t\t\t\t";
+                cout << "No permission to enter the system!\n\n";
+                cout << "\t\t\t\t";
+                system("pause");
+                exit;
+            }
+        }
+    } while (try1 < 3);
+}
+
+void Prison ::SetData()
+{
+    system("cls");
+    int s;
+    Time();
+    cout<<"\n\t\t\t\t";
+    cout<<"Set Data";
+    cout << "\n";
+    cout << "\t\t\t\t\t";
+    cout << "Press 1 to return : ";
+    scanf("%d", &s);
+    if (s == 1)
+    {
+        //Prison::Afterlogin();
+    }
+}
+
+void Prison ::Details()
+{
+	system("cls");
+    Time();
+     cout<<"\n\t\t\t\t";
+     cout<<"Details";
+    cout << "\n";
+    int s;
+    cout << "\t\t\t\t\t";
+    cout << "Press 1 to return : ";
+    scanf("%d", &s);
+    if (s == 1)
+    {
+        //Prison::Afterlogin();
+    }
+}
+
+void Prison ::Attendance()
+{
+	system("cls");
+	Time();
+	 cout<<"\n\t\t\t\t";
+	cout<<"Attendance";
+	int s;
+    cout << "\n";
+    cout << "\t\t\t\t\t";
+    cout << "Press 1 to return : ";
+    scanf("%d", &s);
+    if (s == 1)
+    {
+        //Prison::Afterlogin();
+    }
+}
+
+void Prison ::Release()
+{
+	system("cls");
+	Time();
+	 cout<<"\n\t\t\t\t";
+	cout<<"Release";
+	int s;
+    cout << "\n";
+    cout << "\t\t\t\t\t";
+    cout << "Press 1 to return : ";
+    scanf("%d", &s);
+    if (s == 1)
+    {
+        //Prison::Afterlogin();
+    }
+}
+
+void Prison ::SearchPrison()
+{
+	system("cls");
+	Time();
+	 cout<<"\n\t\t\t\t";
+	cout<<"Search prison";
+	int s;
+   
+    cout << "\n";
+    cout << "\t\t\t\t";
+    cout << "Press 1 to return : ";
+    scanf("%d", &s);
+    if (s == 1)
+    {
+        //Prison::Afterlogin();
+    }
+}
+
+void Prison ::PrisonFile()
+{
+    
+    system("cls");
+    Time();
+     cout<<"\n\t\t\t\t";
+    cout<<"Prison File";
+    int s;
+    cout << "\n";
+    cout << "\t\t\t\t\t";
+    cout << "Press 1 to return : ";
+    scanf("%d", &s);
+    if (s == 1)
+    {
+        //Prison::Afterlogin();
+    }
+}
+void Prison ::Afterlogin_Po()
+{
+    int a, c;
+    int v;
+    do
+    {
+        v = 0;
+        system("cls");
+        Time();
+        cout << "\n\n\n";
+        cout << "\t\t\t\t---------------------------------------------------------------------------\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     1)   Search Prisoner                                 |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     2)   Logout                                         |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     3)   Exit                                           |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t---------------------------------------------------------------------------\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\n";
+        cout << "\t\t\t\t\t\t\t";
+        cout << "\n";
+        cout << "\t\t\t\t\t\t\t";
+        cout << "Enter your choice : ";
+        cin >> c;
+        switch (c)
+        {
+        case 1:
+            Prison ::SetData();
+            break;
+        case 2:
+            Prison ::Logout();
+            break;
+        case 3:
+            Prison ::Exit();
+            break;
+        default:
+            cout << "\n\t\t\t\tInvalid choice\n";
+            cout << "\t\t\t\tPress 1 to return : ";
+            cin >> v;
+        }
+    } while (v == 1);
+}
+void Prison ::Afterlogin_Pr()
+{
+    int a, c;
+    int v;
+    do
+    {
+        v = 0;
+        system("cls");
+        Time();
+        cout << "\n\n\n";
+        cout << "\t\t\t\t---------------------------------------------------------------------------\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     1)   New prisoner entry                             |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     2)   Prisoner details                               |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     3)   Attendace prisoner                             |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     4)   Search prisoner                                |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     5)   Prison File                                    |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     6)   Logout                                         |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     7)   Exit                                           |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t---------------------------------------------------------------------------\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\n";
+        cout << "\t\t\t\t\t\t\t";
+        cout << "\n";
+        cout << "\t\t\t\t\t\t\t";
+        cout << "Enter your choice : ";
+        cin >> c;
+        switch (c)
+        {
+        case 1:
+            Prison ::SetData();
+            break;
+        case 2:
+            Prison ::Details();
+            break;
+        case 3:
+            Prison ::Attendance();
+            break;
+        case 4:
+            Prison ::SearchPrison();
+            break;
+        case 5:
+            Prison::PrisonFile();
+            break;
+        case 6:
+            Prison::Logout();
+            break;
+        case 7:
+            Prison::Exit();
+            break;
+        default:
+            cout << "\n\t\t\t\tInvalid choice\n";
+            cout << "\t\t\t\tPress 1 to return : ";
+            cin >> v;
+        }
+    } while (v == 1);
+}
+void Prison ::Afterlogin_Ad()
+{
+    int a, c;
+    int v;
+    do
+    {
+        v = 0;
+        system("cls");
+        Time();
+        cout << "\n\n\n";
+        cout << "\t\t\t\t---------------------------------------------------------------------------\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     1)   New prisoner entry                             |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     2)   Prisoner details                               |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     3)   Attendace prisoner                             |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     4)   Release prisoner                               |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     5)   Search prisoner                                |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     6)   Prison File                                    |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     7)   Logout                                         |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                     8)   Exit                                           |\n";
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t|                                                                         |\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\t\t\t\t---------------------------------------------------------------------------\n";
+        for (a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << "\n";
+        cout << "\t\t\t\t\t\t\t";
+        cout << "\n";
+        cout << "\t\t\t\t\t\t\t";
+        cout << "Enter your choice : ";
+        cin >> c;
+        switch (c)
+        {
+        case 1:
+            Prison ::SetData();
+            break;
+        case 2:
+            Prison ::Details();
+            break;
+        case 3:
+            Prison ::Attendance();
+            break;
+        case 4:
+            Prison ::Release();
+            break;
+        case 5:
+            Prison ::SearchPrison();
+            break;
+        case 6:
+            Prison::PrisonFile();
+            break;
+        case 7:
+            Prison::Logout();
+            break;
+        case 8:
+            Prison::Exit();
+            break;
+        default:
+            cout << "\n\t\t\t\tInvalid choice\n";
+            cout << "\t\t\t\tPress 1 to return : ";
+            cin >> v;
+        }
+    } while (v == 1);
+}
+
+void Prison ::Exit()
+{
+    system("cls");
+    Time();
+    cout << "Thank you!!";
+    getch();
+}
+
+void Date()
+{
+    time_t T = time(NULL);
+    struct tm tm = *localtime(&T);
+    cout << "\n\n\n";
+    cout << "\t\t\t\t\t   Date: " << tm.tm_mday << "/" << tm.tm_mon + 1 << "/" << tm.tm_year + 1900 << "\n";
+}
+
+void Time()
+{
+    time_t curr_time;
+    curr_time = time(NULL);
+
+    tm *tm_local = localtime(&curr_time);
+    cout << "Time : " << tm_local->tm_hour << ":" << tm_local->tm_min << ":" << tm_local->tm_sec << endl;
+}
+
+void FrontPage()
+{
+    int process = 0;
+    system("cls");
+    Time();
+    Date();
+    cout << "\n";
+    int a;
+    for (a = 0; a <= 100000000; a++)
+    {
+    }
+    cout << "\t\t\t\t    ----------------------------------------\n";
+    for (a = 0; a <= 100000000; a++)
+    {
+    }
+    cout << "\t\t\t\t    |   PRISON SURVEILLANCE SETUP   |\n";
+    for (a = 0; a <= 100000000; a++)
+    {
+    }
+    cout << "\t\t\t\t    ----------------------------------------\n";
+    for (a = 0; a <= 100000000; a++)
+    {
+    }
+    cout << "\n\n";
+    cout << "\t\t\t\t";
+    for (a = 0; a <= 100000000; a++)
+    {
+    }
+    for (a = 0; a <= 100000000; a++)
+    {
+    }
+    cout << ":";
+    for (a = 0; a <= 100000000; a++)
+    {
+    }
+    cout << "   WELCOME TO PRISON SURVEILLANCE SETUP";
+    cout << "\n\n";
+    cout << "\t\t\t\t";
+    cout << "\n\n";
+    cout << "\n\n";
+    cout << "\t\t\t\t";
+    system("pause");
+    cout << "\n\t\t\t\tLoading";
+
+    for (process = 0; process < 15; process++)
+    {
+        for (int a = 0; a <= 100000000; a++)
+        {
+        }
+        cout << ".";
+    }
+    system("cls");
+    
+}
+
+int main()
+{
+	int option;
+        Prison a;
+    FrontPage();
+    fflush(stdin);
+    system("cls");
+    Time();
+     for (int b = 0; b <= 100000000; b++)
+    {
+    }
+    cout<<"\n\n\t\t\t\t\t\tLOGIN OPTIONS";
+    cout<<"\n\n\n\t\t1. ADMINISTRATION LOGIN";
+    cout<<"\n\n\n\t\t2. POLICE LOGIN";
+    cout<<"\n\n\n\t\t3. JAILOR LOGIN";
+    cout<<"\n\n\n\tPlease choose the Login Option: ";
+    cin>>option;
+    if(option==1)
+    {
+    	a.Ad_Login();
+	}
+else if(option==2)
+{
+	a.Po_Login();
+}
+else if(option==3)
+{
+	a.Pr_Login();
+}
+else
+{
+	cout<<"Invalid Choice";
+	cout<<"\n\n\t\t\tPress any key to return to opening window";
+	getch();
+	system("cls");
+	int main();
+		return main();
+}
+    return 0;
+}
